@@ -16,7 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class CameraMixin {
     @Shadow protected abstract void setPos(double x, double y, double z);
     @Shadow protected abstract void setRotation(float yaw, float pitch);
-    @Shadow public abstract Vec3d getPos();
+    @Shadow public abstract Vec3d getCameraPos();
     @Shadow public abstract float getYaw();
     @Shadow public abstract float getPitch();
 
@@ -27,7 +27,7 @@ public abstract class CameraMixin {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         if (player == null) return;
 
-        Vec3d base = getPos();
+        Vec3d base = getCameraPos();
         float baseYaw = getYaw();
         float basePitch = getPitch();
         Vec3d pivot = new Vec3d(player.getX(), player.getY() + player.getHeight() * 0.6, player.getZ());
