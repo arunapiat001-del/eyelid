@@ -8,8 +8,9 @@
   "license": "CC0-1.0",
   "environment": "client",
   "entrypoints": {
-    "client": ["com.deathdim.eyelid.EyelidClient", "com.deathdim.eyelid.RebirthClient"]
+    "client": ["com.deathdim.eyelid.EyelidClient", "com.deathdim.eyelid.RebirthClient", "com.deathdim.eyelid.CameraOrbit"]
   },
+  "mixins": [{"config": "eyelid.client.mixins.json", "environment": "client"}],
   "depends": {
     "fabricloader": ">=0.19.0",
     "minecraft": "~1.21.11",
